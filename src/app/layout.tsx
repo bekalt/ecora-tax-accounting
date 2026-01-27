@@ -50,21 +50,58 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="flex-1">{children}</main>
 
-        <footer className="border-t bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-6 text-xs text-slate-500 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              © {new Date().getFullYear()} {site.name}. All rights reserved.
-            </div>
-            <div className="flex gap-4">
-              <Link href="/privacy" className="hover:text-sky-700">
-                Privacy Policy
-              </Link>
-              <Link href="/contact" className="hover:text-sky-700">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </footer>
+      {/* FOOTER */}
+<footer className="border-t bg-white">
+  <div className="mx-auto max-w-5xl px-4 py-6 text-xs text-slate-500 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      © {new Date().getFullYear()} {site.name}. All rights reserved.
+    </div>
+
+    <div className="flex flex-wrap items-center gap-4">
+      <Link href="/privacy" className="hover:text-sky-700">
+        Privacy Policy
+      </Link>
+      <Link href="/contact" className="hover:text-sky-700">
+        Contact
+      </Link>
+
+      {/* Social links (optional) */}
+      {site.social?.linkedin && (
+        <a
+          href={site.social.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-sky-700"
+        >
+          LinkedIn
+        </a>
+      )}
+
+      {site.social?.facebook && (
+        <a
+          href={site.social.facebook}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-sky-700"
+        >
+          Facebook
+        </a>
+      )}
+
+      {site.social?.twitter && (
+        <a
+          href={site.social.twitter}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-sky-700"
+        >
+          X
+        </a>
+      )}
+    </div>
+  </div>
+</footer>
+
       </body>
     </html>
   );

@@ -19,7 +19,7 @@ export const site = {
 
   // Social (optional, for future OG + footer)
   social: {
-    linkedin: "",
+    linkedin: "https:linkedin.com/in/example",
     facebook: "",
     twitter: "",
   },
