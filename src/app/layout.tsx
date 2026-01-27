@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Ecora Tax & Accounting | CPA Services in the DMV Area",
+    title: "Ecora Tax & Business Consulting LLC | CPA Firm",
     description:
       "Trusted CPA services for individuals and small businesses across Maryland, DC, and Northern Virginia.",
     url: "/",
@@ -98,6 +98,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           X
         </a>
       )}
+      {site.address?.street && (
+  <div className="text-slate-600">
+    {site.address.street}
+    {site.address.city ? `, ${site.address.city}` : ""}
+    {site.address.state ? `, ${site.address.state}` : ""}{" "}
+    {site.address.zip}
+  </div>
+)}
+
     </div>
   </div>
 </footer>

@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-4 pt-10 pb-16">
           {/* Business name (primary identity) */}
           <h1 className="text-3xl md:text-4xl font-semibold leading-snug">
-            Ecora Tax &amp; Accounting
+            Ecora Tax &amp; Business COnsulting LLC
           </h1>
 
           {/* Credential (secondary trust signal) */}
