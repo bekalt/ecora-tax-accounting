@@ -248,9 +248,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <p className="mt-4 text-center text-xs text-slate-500">
-            Client logos can be added with permission. For now, we show industries we commonly support.
-          </p>
+          
         </div>
       </section>
     </main>

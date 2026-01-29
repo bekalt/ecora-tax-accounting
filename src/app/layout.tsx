@@ -109,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 {/* Phone (optional) */}
 {site.phoneDisplay && site.phoneTel ? (
   <div className="text-slate-600">
-    <span className="font-medium">Cell:</span>{" "}
+    <span className="font-medium">Tel:</span>{" "}
     <a
       href={`tel:${site.phoneTel}`}
       className="hover:text-sky-700"
