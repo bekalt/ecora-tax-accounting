@@ -54,5 +54,5 @@ export const taxUpdates: TaxUpdate[] = [
     dateLabel: "Reference",
     href: "https://www.irs.gov/forms-pubs",
     source: "IRS Forms & Pubs",
-  },
+  }
 ];
