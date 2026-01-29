@@ -27,7 +27,7 @@ export const site = {
 
   // Social (optional, for future OG + footer)
   social: {
-    linkedin: "https://linkedin.com/in/example", // <-- fixed missing //
+    linkedin: "", 
     facebook: "",
     twitter: "",
   },
