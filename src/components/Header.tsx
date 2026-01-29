@@ -81,8 +81,8 @@ export default function Header() {
   <Image
     src="/logo.png"
     alt="Ecora Tax & Business Consulting LLC logo"
-    width={36}
-    height={36}
+    width={64}
+    height={64}
     priority
   />
 
