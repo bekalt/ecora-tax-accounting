@@ -106,6 +106,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {site.address.zip}
   </div>
 )}
+{/* Phone (optional) */}
+{site.phoneDisplay && site.phoneTel ? (
+  <div className="text-slate-600">
+    <span className="font-medium">Cell:</span>{" "}
+    <a
+      href={`tel:${site.phoneTel}`}
+      className="hover:text-sky-700"
+    >
+      {site.phoneDisplay}
+    </a>
+  </div>
+) : null}
 
     </div>
   </div>
