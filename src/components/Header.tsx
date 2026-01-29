@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -76,12 +76,20 @@ export default function Header() {
     <header className="sticky top-0 z-[9999] border-b bg-white/85 backdrop-blur">
       <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-4">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-semibold text-sm md:text-base text-slate-900">
-            {site.name}
-          </span>
-        </Link>
+        
+<Link href="/" className="flex items-center gap-3">
+  <Image
+    src="/logo.png"
+    alt="Ecora Tax & Business Consulting LLC logo"
+    width={36}
+    height={36}
+    priority
+  />
 
+  <span className="font-semibold text-sm md:text-base text-slate-900 hidden sm:inline">
+    {site.name}
+  </span>
+</Link>
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-5 text-sm">
           <Link
