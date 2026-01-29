@@ -139,33 +139,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* TAX UPDATES */}
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-  {taxUpdates.map((u) => (
-    <a
-      key={u.title}
-      href={u.href}
-      target="_blank"
-      rel="noreferrer"
-      className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
-    >
-      <div className="text-xs font-medium text-slate-500">
-        {u.dateLabel} • {u.source}
-      </div>
-
-      <div className="mt-2 text-base font-semibold text-slate-900 group-hover:text-sky-800">
-        {u.title}
-      </div>
-
-      <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-        {u.summary}
-      </p>
-
-      <div className="mt-4 text-sm font-medium text-sky-700">
-        Read more ↗
-      </div>
-    </a>
-  ))}
-</div>
+     
 
 <section id="tax-updates" className="bg-slate-50">
   <div className="mx-auto max-w-5xl px-4 py-14">
@@ -200,6 +174,33 @@ export default function HomePage() {
       with official guidance or contacting our office for personalized help.
     </p>
   </div>
+   <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  {taxUpdates.map((u) => (
+    <a
+      key={u.title}
+      href={u.href}
+      target="_blank"
+      rel="noreferrer"
+      className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
+    >
+      <div className="text-xs font-medium text-slate-500">
+        {u.dateLabel} • {u.source}
+      </div>
+
+      <div className="mt-2 text-base font-semibold text-slate-900 group-hover:text-sky-800">
+        {u.title}
+      </div>
+
+      <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+        {u.summary}
+      </p>
+
+      <div className="mt-4 text-sm font-medium text-sky-700">
+        Read more ↗
+      </div>
+    </a>
+  ))}
+</div>
 </section>
 
       {/* SOME OF THE COMPANIES WE WORK WITH */}
