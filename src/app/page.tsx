@@ -1,4 +1,4 @@
-import { taxUpdates } from "@/lib/taxUpdates";
+//import { taxUpdates } from "@/lib/taxUpdates";
 import HeroParallax from "@/components/HeroParallax";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -165,39 +165,7 @@ export default function HomePage() {
       </div>
     </div>
 
-    <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {taxUpdates.map((u) => (
-        <a
-          key={u.title}
-          href={u.href}
-          target="_blank"
-          rel="noreferrer"
-          className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <div className="text-xs font-medium text-slate-500">
-                {u.dateLabel} • {u.source}
-              </div>
-              <div className="mt-2 text-base font-semibold text-slate-900 group-hover:text-sky-800">
-                {u.title}
-              </div>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                {u.summary}
-              </p>
-            </div>
-
-            <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border text-slate-400 group-hover:text-sky-700 group-hover:border-sky-200">
-              ↗
-            </span>
-          </div>
-
-          <div className="mt-4 text-sm font-medium text-sky-700">
-            Read more
-          </div>
-        </a>
-      ))}
-    </div>
+    
 
     <p className="mt-6 text-xs text-slate-500">
       This section is informational and may change. We recommend confirming details
