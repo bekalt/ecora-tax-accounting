@@ -1,4 +1,4 @@
-//import { taxUpdates } from "@/lib/taxUpdates";
+import { taxUpdates } from "@/lib/taxUpdates";
 import HeroParallax from "@/components/HeroParallax";
 import Link from "next/link";
 import { site } from "@/lib/site";
