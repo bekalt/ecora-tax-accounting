@@ -28,7 +28,7 @@ export default function HeroParallax() {
         // Subtle parallax: move background slower than scroll
         const translateY = Math.min(y * 0.12, 60);
  // cap so it doesn't drift too far
-        bgRef.current!.style.transform = `translateY(${translateY}px) scale(1.05)`;
+        bgRef.current!.style.transform = `translateY(${translateY}px) scale(1.02)`;
       });
     };
 
@@ -45,14 +45,15 @@ export default function HeroParallax() {
     <section className="relative overflow-hidden text-white">
       {/* Background image layer */}
       <div
-        ref={bgRef}
-        className="absolute inset-0 bg-cover bg-center will-change-transform"
-        style={{
-          backgroundImage: "url('/images/hero-bg.jpg')",
-          transform: "translateY(0px) scale(1.05)",
-        }}
-        aria-hidden="true"
-      />
+  ref={bgRef}
+  className="absolute inset-0 bg-cover bg-[position:50%_20%] will-change-transform"
+  style={{
+    backgroundImage: "url('/images/hero-bg.jpg')",
+    transform: "translateY(0px) scale(1.02)",
+  }}
+  aria-hidden="true"
+/>
+
 
       {/* Overlay for readability */}
       <div
