@@ -7,8 +7,11 @@ import { site } from "@/lib/site";
 export default function HeroParallax() {
   const bgRef = useRef<HTMLDivElement | null>(null);
 
+  // ✅ IMPORTANT: This path MUST match your /public folder exactly
+  // Place the file at: /public/images/hero-bg.jpg
+  const HERO_BG = "/images/hero-bg.jpg";
+
   useEffect(() => {
-    // Respect reduced motion preferences
     const prefersReducedMotion =
       typeof window !== "undefined" &&
       window.matchMedia &&
@@ -24,10 +27,7 @@ export default function HeroParallax() {
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const y = window.scrollY || 0;
-
-        // Subtle parallax: move background slower than scroll
-        const translateY = Math.min(y * 0.12, 60);
- // cap so it doesn't drift too far
+        const translateY = Math.min(y * 0.12, 60); // cap so it doesn't drift too far
         bgRef.current!.style.transform = `translateY(${translateY}px) scale(1.02)`;
       });
     };
@@ -42,18 +42,19 @@ export default function HeroParallax() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden text-white">
+    <section className="relative overflow-hidden text-white min-h-[520px]">
       {/* Background image layer */}
       <div
-  ref={bgRef}
-  className="absolute inset-0 bg-cover bg-[position:50%_20%] will-change-transform"
-  style={{
-    backgroundImage: "url('/images/hero-bg.jpg')",
-    transform: "translateY(0px) scale(1.02)",
-  }}
-  aria-hidden="true"
-/>
-
+        ref={bgRef}
+        className="absolute inset-0 bg-cover bg-[position:50%_20%] will-change-transform"
+        style={{
+          // Fallback color helps avoid “blank” hero if image path is wrong
+          backgroundColor: "#0b1220",
+          backgroundImage: `url('${HERO_BG}')`,
+          transform: "translateY(0px) scale(1.02)",
+        }}
+        aria-hidden="true"
+      />
 
       {/* Overlay for readability */}
       <div
@@ -63,9 +64,7 @@ export default function HeroParallax() {
 
       {/* Content */}
       <div className="relative mx-auto max-w-5xl px-4 pt-10 pb-16">
-        <h1 className="text-3xl md:text-4xl font-semibold leading-snug">
-          {site.name}
-        </h1>
+        <h1 className="text-3xl md:text-4xl font-semibold leading-snug">{site.name}</h1>
 
         <p className="mt-2 text-sm md:text-base uppercase tracking-[0.25em] text-sky-200">
           Certified Public Accountant
@@ -80,8 +79,7 @@ export default function HeroParallax() {
         </p>
 
         <p className="mt-4 text-sm md:text-base text-sky-100/85 max-w-xl">
-          Personalized tax preparation, bookkeeping, and advisory services across{" "}
-          {site.serviceArea}.
+          Personalized tax preparation, bookkeeping, and advisory services across {site.serviceArea}.
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
