@@ -34,7 +34,7 @@ export default function HomePage() {
 
       {/* SERVICES SECTION */}
       <section id="services" className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-14">
+  <div className="mx-auto max-w-5xl px-4 pt-14 pb-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
@@ -119,7 +119,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-2xl border bg-slate-50 p-6 sm:p-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-8 rounded-2xl border bg-slate-50 p-6 sm:p-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="text-base font-semibold text-slate-900">
                 Not sure which service you need?
@@ -142,7 +142,7 @@ export default function HomePage() {
      
 
 <section id="tax-updates" className="bg-slate-50">
-  <div className="mx-auto max-w-5xl px-4 py-14">
+  <div className="mx-auto max-w-5xl px-4 pt-10 pb-14">
     <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
