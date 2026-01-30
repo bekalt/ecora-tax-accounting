@@ -185,7 +185,10 @@ export default function Header() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-sm text-slate-900">{site.name}</span>
+                <span className="font-semibold text-sm md:text-base text-slate-900">
+  {site.name}
+</span>
+
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
