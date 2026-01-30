@@ -77,10 +77,11 @@ export default function Header() {
       style={{ contain: "layout paint" }}
     >
       <div className="px-4 sm:px-6 pointer-events-auto">
-        <div className="flex items-center justify-between gap-4 py-3 pointer-events-auto">
+        {/* ✅ remove justify-between; use flex-1 on brand + ml-auto on button */}
+        <div className="flex items-center gap-3 py-3 pointer-events-auto">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-3">
-            <span className="inline-flex items-center justify-center rounded-xl bg-sky-50 ring-1 ring-sky-100 p-1.5">
+          <Link href="/" className="flex items-center gap-3 min-w-0 flex-1">
+            <span className="inline-flex items-center justify-center rounded-xl bg-sky-50 ring-1 ring-sky-100 p-1.5 shrink-0">
               <Image
                 src="/logo.png"
                 alt="Ecora Tax & Business Consulting LLC logo"
@@ -91,7 +92,8 @@ export default function Header() {
               />
             </span>
 
-            <span className="font-semibold text-sm md:text-base text-slate-900 hidden sm:inline">
+            {/* ✅ always visible + mobile-friendly truncation */}
+            <span className="font-semibold text-[13px] sm:text-sm md:text-base text-slate-900 truncate">
               {site.name}
             </span>
           </Link>
@@ -161,7 +163,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="md:hidden inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm hover:bg-slate-50"
+            className="md:hidden ml-auto shrink-0 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm hover:bg-slate-50"
             aria-label="Open menu"
           >
             <span className="text-base leading-none">☰</span>
@@ -186,8 +188,8 @@ export default function Header() {
             >
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-sm md:text-base text-slate-900">
-  {site.name}
-</span>
+                  {site.name}
+                </span>
 
                 <button
                   type="button"
@@ -239,7 +241,7 @@ export default function Header() {
 
                   {servicesOpen && (
                     <div className="bg-white">
-                      {/* ✅ Mobile-only "View all services" */}
+                      {/* Mobile-only "View all services" */}
                       <Link
                         href="/services"
                         onClick={() => setOpen(false)}
