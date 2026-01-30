@@ -1,8 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 import type { Viewport } from "next";
 
@@ -50,79 +50,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main className="flex-1">{children}</main>
 
-      {/* FOOTER */}
-<footer className="border-t bg-white">
-  <div className="mx-auto max-w-5xl px-4 py-6 text-xs text-slate-500 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-    <div>
-      © {new Date().getFullYear()} {site.name}. All rights reserved.
-    </div>
+        <Footer />
 
-    <div className="flex flex-wrap items-center gap-4">
-      <Link href="/privacy" className="hover:text-sky-700">
-        Privacy Policy
-      </Link>
-      <Link href="/contact" className="hover:text-sky-700">
-        Contact
-      </Link>
-
-      {/* Social links (optional) */}
-      {site.social?.linkedin && (
-        <a
-          href={site.social.linkedin}
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-sky-700"
-        >
-          LinkedIn
-        </a>
-      )}
-
-      {site.social?.facebook && (
-        <a
-          href={site.social.facebook}
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-sky-700"
-        >
-          Facebook
-        </a>
-      )}
-
-      {site.social?.twitter && (
-        <a
-          href={site.social.twitter}
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-sky-700"
-        >
-          X
-        </a>
-      )}
-      {site.address?.street && (
-  <div className="text-slate-600">
-    {site.address.street}
-    {site.address.city ? `, ${site.address.city}` : ""}
-    {site.address.state ? `, ${site.address.state}` : ""}{" "}
-    {site.address.zip}
-  </div>
-)}
-{/* Phone (optional) */}
-{site.phoneDisplay && site.phoneTel ? (
-  <div className="text-slate-600">
-    <span className="font-medium">Tel:</span>{" "}
-    <a
-      href={`tel:${site.phoneTel}`}
-      className="hover:text-sky-700"
-    >
-      {site.phoneDisplay}
-    </a>
-  </div>
-) : null}
-
-    </div>
-  </div>
-</footer>
-
+        {/* Portal root used by Header mobile menu */}
+        <div id="portal-root" />
       </body>
     </html>
   );

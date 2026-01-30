@@ -7,8 +7,7 @@ import { site } from "@/lib/site";
 export default function HeroParallax() {
   const bgRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ IMPORTANT: This path MUST match your /public folder exactly
-  // Place the file at: /public/images/hero-bg.jpg
+  // Must exist at /public/images/hero-bg.jpg
   const HERO_BG = "/images/hero-bg.jpg";
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function HeroParallax() {
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const y = window.scrollY || 0;
-        const translateY = Math.min(y * 0.12, 60); // cap so it doesn't drift too far
+        const translateY = Math.min(y * 0.12, 60);
         bgRef.current!.style.transform = `translateY(${translateY}px) scale(1.02)`;
       });
     };
@@ -43,12 +42,11 @@ export default function HeroParallax() {
 
   return (
     <section className="relative overflow-hidden text-white min-h-[520px]">
-      {/* Background image layer */}
+      {/* Background image layer (never intercept clicks) */}
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-cover bg-[position:50%_20%] will-change-transform"
+        className="absolute inset-0 bg-cover bg-[position:50%_20%] will-change-transform pointer-events-none"
         style={{
-          // Fallback color helps avoid “blank” hero if image path is wrong
           backgroundColor: "#0b1220",
           backgroundImage: `url('${HERO_BG}')`,
           transform: "translateY(0px) scale(1.02)",
@@ -56,14 +54,14 @@ export default function HeroParallax() {
         aria-hidden="true"
       />
 
-      {/* Overlay for readability */}
+      {/* Overlay for readability (never intercept clicks) */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-sky-950/85 via-sky-900/70 to-sky-800/75"
+        className="absolute inset-0 bg-gradient-to-br from-sky-950/85 via-sky-900/70 to-sky-800/75 pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Content */}
-      <div className="relative mx-auto max-w-5xl px-4 pt-10 pb-16">
+      {/* Content (clickable) */}
+      <div className="relative z-10 mx-auto max-w-5xl px-4 pt-10 pb-16 pointer-events-auto">
         <h1 className="text-3xl md:text-4xl font-semibold leading-snug">{site.name}</h1>
 
         <p className="mt-2 text-sm md:text-base uppercase tracking-[0.25em] text-sky-200">
@@ -90,8 +88,9 @@ export default function HeroParallax() {
             Schedule Appointment
           </Link>
 
+          {/* ✅ This now opens the services page */}
           <Link
-            href="#services"
+            href="/services"
             className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium border border-white/70 hover:bg-white/10"
           >
             View Services
