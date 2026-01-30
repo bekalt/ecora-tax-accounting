@@ -2,8 +2,8 @@ export const site = {
   name: "Ecora Tax & Business Consulting LLC",
 
   // Contact
-  phoneDisplay: "(240) 481-5255",
-  phoneTel: "+12404815255", // <-- use a real E.164 phone number
+  phoneDisplay: "(240) 481-9806",
+  phoneTel: "+12404819806", // <-- use a real E.164 phone number
   email: "info@ecorataxcpa.com",
 
   // Location / service area
