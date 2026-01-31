@@ -46,18 +46,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
         <JsonLd />
-        <Header />
+      <Header />
 
 
-{/* Experience banner */}
-<div className="bg-slate-100 border-b border-slate-200">
-  <p className="max-w-7xl mx-auto px-4 py-2 text-center text-sm text-slate-700">
-    Backed by over <span className="font-semibold">15 years of CPA experience</span> delivering reliable tax and accounting solutions.
-  </p>
-</div>
+
 
         <main className="flex-1">{children}</main>
-
+  
         <Footer />
 
         {/* Portal root used by Header mobile menu */}
