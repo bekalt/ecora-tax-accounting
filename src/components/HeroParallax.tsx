@@ -69,12 +69,13 @@ export default function HeroParallax() {
         </p>
 
         <h2 className="mt-6 text-2xl md:text-3xl font-medium leading-snug">
-          Stress-free Tax &amp; Accounting Services
-        </h2>
+  Tax &amp; Accounting Services Backed by Over 15 Years of CPA Experience
+</h2>
+
 
         <p className="mt-3 text-base md:text-lg text-sky-100/90 max-w-xl">
-          Helping individuals and small businesses stay compliant and confident.
-        </p>
+  Helping individuals and small businesses make confident, informed financial decisions.
+</p>
 
         <p className="mt-4 text-sm md:text-base text-sky-100/85 max-w-xl">
           Personalized tax preparation, bookkeeping, and advisory services across {site.serviceArea}.
