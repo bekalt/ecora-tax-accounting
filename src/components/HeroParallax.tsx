@@ -81,12 +81,15 @@ export default function HeroParallax() {
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
-          <Link
-            href="/contact#contact"
-            className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-white text-sky-900 hover:bg-sky-50"
-          >
-            Schedule Appointment
-          </Link>
+          <a
+  href={site.bookingUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-white text-sky-900 hover:bg-sky-50"
+>
+  Schedule Appointment
+</a>
+
 
           {/* ✅ This now opens the services page */}
           <Link

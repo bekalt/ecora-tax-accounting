@@ -281,32 +281,23 @@ export default function Header() {
                 </Link>
 
                 <a
-                  href={`tel:${site.phoneTel}`}
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-2 hover:bg-slate-50 text-slate-900"
-                >
-                  Call {site.phoneDisplay}
-                </a>
+  href={`tel:${site.phoneTel}`}
+  onClick={() => setOpen(false)}
+  className="rounded-lg px-3 py-2 hover:bg-slate-50 text-slate-900"
+>
+  Call {site.phoneDisplay}
+</a>
 
-                {bookingUrl ? (
-                  <a
-                    href={bookingUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => setOpen(false)}
-                    className="mt-2 inline-flex items-center justify-center rounded-full bg-sky-700 px-5 py-2 text-xs font-medium text-white hover:bg-sky-800"
-                  >
-                    Book a Call
-                  </a>
-                ) : (
-                  <Link
-                    href="/contact#contact"
-                    onClick={() => setOpen(false)}
-                    className="mt-2 inline-flex items-center justify-center rounded-full bg-sky-700 px-5 py-2 text-xs font-medium text-white hover:bg-sky-800"
-                  >
-                    Schedule a Call
-                  </Link>
-                )}
+<a
+  href={bookingUrl}
+  target="_blank"
+  rel="noreferrer"
+  onClick={() => setOpen(false)}
+  className="mt-2 inline-flex items-center justify-center rounded-full bg-sky-700 px-5 py-2 text-xs font-medium text-white hover:bg-sky-800"
+>
+  Book a Call
+</a>
+
               </nav>
             </div>
           </div>,

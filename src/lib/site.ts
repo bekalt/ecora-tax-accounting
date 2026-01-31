@@ -1,5 +1,11 @@
 export const site = {
   name: "Ecora Tax & Business Consulting LLC",
+// src/lib/site.ts
+
+  // Scheduling (optional)
+  bookingUrl:
+    "https://outlook.office.com/book/MulatuaAssefaCPAEcoraTaxBusinessConsulting@ecorataxcpa.com/?ismsaljsauthenabled",
+
 
   // Contact
   phoneDisplay: "(240) 481-9806",
@@ -10,9 +16,7 @@ export const site = {
   location: "Maryland, USA",
   serviceArea: "Washington DC, Maryland and Northern Virginia",
 
-  // Scheduling (optional)
-  bookingUrl: "",
-
+   
   // SEO / branding
   domain: "ecorataxcpa.com", // <-- lowercase, no protocol
   timezone: "America/New_York",
